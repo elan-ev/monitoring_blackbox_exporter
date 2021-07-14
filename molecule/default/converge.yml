@@ -1,0 +1,8 @@
+---
+- name: converge
+  hosts: all
+  become: true
+  tasks:
+    - name: include blackbox_exporter
+      include_role:
+        name: monitoring_blackbox_exporter
