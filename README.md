@@ -1,6 +1,6 @@
 # Ansible Role for the blackbox_exporter
 
-![molecule](https://github.com/elan/monitoring_loki/actions/workflows/molecule.yml/badge.svg)
+![molecule](https://github.com/elan-ev/monitoring_loki/actions/workflows/molecule.yml/badge.svg)
 
 Install the latest [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) version with [ansible](https://docs.ansible.com/).
 
