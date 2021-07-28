@@ -20,7 +20,8 @@ Just add the role to your playbook:
 - hosts: all
   become: true
   roles:
-    - elan.monitoring_blackbox_exporter
+    - role: elan.monitoring_blackbox_exporter
+      blackbox_exporter_config_template: 'custom_templates/blackbox.yml.j2'
 ```
 
 ## Development
