@@ -31,7 +31,7 @@
   block:
     - name: get latest release data
       uri:
-        url: https://api.github.com/repos/prometheus/blackbox_exporter/releases/latest
+        url: https://api.github.com/repos/prometheus/blackbox_exporter/releases/latest  # yamllint disable-line rule:line-length
         return_content: true
         headers:
           Accept: "application/vnd.github.v3+json"
@@ -57,7 +57,7 @@
         blackbox_exporter_checksum: "{{ item.split(' ')[0] }}"
       with_items: "{{ _checksums }}"
       when: "'linux-amd64.tar.gz' in item"
-  when: blackbox_exporter_remote_version["failed"] or blackbox_exporter_remote_version["content"] | b64decode != json_reponse.json.tag_name  # noqa 204
+  when: blackbox_exporter_remote_version["failed"] or blackbox_exporter_remote_version["content"] | b64decode != json_reponse.json.tag_name  # yamllint disable-line rule:line-length
 
 - name: download and install blackbox_exporter
   block:
@@ -104,7 +104,7 @@
         owner: blackbox_exporter
         group: blackbox_exporter
         mode: '0644'
-  when: blackbox_exporter_remote_version["failed"] or blackbox_exporter_remote_version["content"] | b64decode != json_reponse.json.tag_name  # noqa 204
+  when: blackbox_exporter_remote_version["failed"] or blackbox_exporter_remote_version["content"] | b64decode != json_reponse.json.tag_name  # yamllint disable-line rule:line-length
   notify: restart blackbox_exporter
 
 - name: copy service file
