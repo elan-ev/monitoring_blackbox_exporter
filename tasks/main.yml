@@ -9,6 +9,7 @@
   user:
     name: blackbox_exporter
     state: present
+    create_home: false
 
 - name: create blackbox_exporter directory
   file:
